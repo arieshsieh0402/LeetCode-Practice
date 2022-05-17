@@ -1,20 +1,10 @@
 # 2000-Reverse-Prefix-of-Word
 def reversePrefix(word: str, ch: str) -> str:
-    # Check if length of word is 1, return the word.
-    if len(word) == 1:
-        return word
-    # f not, use for-loop to iterate the word,
-    # if found “ch”, slice the word to left_segment and right_segment.
+    # Reverse the prefix of word segment
+    # by using string slice method with indexing syntax.
     for i in range(len(word)):
         if word[i] == ch:
-            left_segment = word[:i + 1]
-            # Reverse the left_segment
-            # by using string slice method with indexing syntax.
-            rv_left_segment = left_segment[::-1]
-            right_segment = word[i + 1:len(word)]
-            # Reverse the left_segment by using string slice method
-            # with indexing syntax.
-            return rv_left_segment + right_segment
+            return word[:i + 1][::-1] + word[i + 1:]
     # If not found the “ch”, return the word.
     return word
 
