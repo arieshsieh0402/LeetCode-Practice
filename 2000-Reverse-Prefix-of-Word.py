@@ -1,10 +1,16 @@
-# 2000-Reverse-Prefix-of-Word
 def reversePrefix(word: str, ch: str) -> str:
+    """
+    Solution of 2000-Reverse-Prefix-of-Word.
+
+    word -- consists of lowercase English letters.
+    ch -- is a lowercase English letter.
+
+    """
     # Reverse the prefix of word segment
     # by using string slice method with indexing syntax.
-    for i in range(len(word)):
-        if word[i] == ch:
-            return word[:i + 1][::-1] + word[i + 1:]
+    for key, value in enumerate(word):
+        if value == ch:
+            return word[:key + 1][::-1] + word[key + 1:]
     # If not found the “ch”, return the word.
     return word
 
