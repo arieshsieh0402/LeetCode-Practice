@@ -1,4 +1,4 @@
-def maxAscendingSum(nums: list[int]) -> int:
+def max_ascending_sum(nums: list[int]) -> int:
     """
     Solution of 1800. Maximum Ascending Subarray Sum.
 
@@ -24,9 +24,6 @@ def maxAscendingSum(nums: list[int]) -> int:
                 continue
 
     return max_sum
-
-
-print(maxAscendingSum([10, 20, 30, 5, 10, 50]))
 
 # URL:https://leetcode.com/problems/maximum-ascending-subarray-sum/
 

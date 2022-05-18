@@ -1,4 +1,4 @@
-def timeRequiredToBuy(tickets, k):
+def time_required_to_buy(tickets, k):
     counter = 0
     target = tickets[k]
     while target > 0:
@@ -16,7 +16,8 @@ def timeRequiredToBuy(tickets, k):
 
 # 1. Set counter to the seconds counter
 # 2. Target is the number of tickets that the person needs to buy for ticket[k]
-# 3. Set a while loop, run through the entire array, only when ticket[i] is greater than or equal to 0 after minus 1, will counter plus 1
+# 3. Set a while loop, run through the entire array, only when ticket[i]
+# is greater than or equal to 0 after minus 1, will counter plus 1
 # 4. If ticket[k] is 0, break out of the loop
 # 5. After each while loop runs, the target minus 1
 

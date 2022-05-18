@@ -1,4 +1,4 @@
-def reversePrefix(word: str, ch: str) -> str:
+def reverse_prefix(word: str, ch: str) -> str:
     """
     Solution of 2000-Reverse-Prefix-of-Word.
 

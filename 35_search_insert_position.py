@@ -1,4 +1,4 @@
-def searchInsert(nums: list[int], target: int) -> int:
+def search_insert(nums: list[int], target: int) -> int:
     # Binary Search
     left = 0
     right = len(nums) - 1
@@ -15,8 +15,8 @@ def searchInsert(nums: list[int], target: int) -> int:
     else:
         return mid
 
-# URL:https://leetcode.com/problems/search-insert-position/    
-    
+# URL:https://leetcode.com/problems/search-insert-position/
+
 # **Steps**
 
 # 1. Using binary search to find the target in list.

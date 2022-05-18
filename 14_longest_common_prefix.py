@@ -1,4 +1,4 @@
-def longestCommonPrefix(strs: list[str]) -> str:
+def longest_commonPrefix(strs: list[str]) -> str:
     """
     Solution of 14. Longest Common Prefix.
     """
