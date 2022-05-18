@@ -9,3 +9,10 @@ def longestCommonPrefix(strs: list[str]) -> str:
             prefix = prefix[:-1]
 
     return prefix
+
+# URL:https://leetcode.com/problems/longest-common-prefix/
+
+# ===========Time Complexity(Worst Case Performence)=========== #
+# O(n^2)
+
+# BTW: This is not my answer.
