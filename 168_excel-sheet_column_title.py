@@ -13,3 +13,6 @@ def convert_to_title(column_number: int) -> str:
     result.reverse()
 
     return ''.join(result)
+
+# Time Complexity
+# O(n)
