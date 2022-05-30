@@ -11,7 +11,7 @@ def lemonade_change(bills: List[int]) -> bool:
             five += 1
         elif pay == 10:
             five, ten = five - 1, ten + 1
-        # If pay == 20, the fisrt best option is 
+        # If pay == 20, the fisrt best option is
         # give one ten and one five as change.
         elif ten > 0:
             five, ten = five - 1, ten - 1
