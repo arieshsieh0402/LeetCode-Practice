@@ -3,10 +3,8 @@
 
 def climb_stairs(n: int) -> int:
     # Base case
-    if n == 1:
-        return 1
-    if n == 2:
-        return 2
+    if n <= 2:
+        return n
     return climb_stairs(n - 1) + climb_stairs(n - 2)
 
 # Time Complexity: O(2^n)
@@ -31,7 +29,6 @@ def climb_stairs(n: int) -> int:
 
 dp = {1: 1, 2: 2}
 def climb_stairs(n: int) -> int:
-    # Base case
     if n in dp:
         return dp[n]
     else:
@@ -50,11 +47,9 @@ def climb_stairs(n: int) -> int:
 # Fibonacci with DP in iteration way
 
 def climb_stairs(n: int) -> int:
-    if n == 1: 
-        return 1
-    if n == 2:
-        return 2
-    dp = [0] * (n+1)
+    if n <= 2:
+        return n
+    dp = [0] * (n + 1)
     dp[0] = 0
     dp[1] = 1
     dp[2] = 2
@@ -76,13 +71,16 @@ def climb_stairs(n: int) -> int:
 # Fibonacci with DP in tricky way
 
 def climb_stairs(n: int) -> int:
-    if n == 1:
-        return 1
-    if n == 2:
-        return 2
+    if n <= 2:
+        return n
     s1, s2 = 1, 2
     for _ in range(n - 2):
+        # Using swap in Python (tuple packing & unpacking)
         s1, s2 = s2, s1 + s2
+        # Or:
+        # temp = s1
+        # s1 = s2
+        # s2 = temp + s2
     return s2
 
 # Time Complexity: O(n)
