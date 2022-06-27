@@ -1,4 +1,4 @@
-def longest_palindrome(s: str) -> str:
+def longest_palindrome_brute_force(s: str) -> str:
     longest_palindrome = ''
 
     for i in range(len(s)):
@@ -11,7 +11,7 @@ def longest_palindrome(s: str) -> str:
     return longest_palindrome
 
 
-def longest_palindrome(s: str) -> str:
+def longest_palindrome_middle_search(s: str) -> str:
     start, max_length = 0, 0
 
     def find_longest_palindrome(s, left, right):
@@ -31,7 +31,7 @@ def longest_palindrome(s: str) -> str:
     return s[start:start + max_length]
 
 
-def longest_palindrome(s: str) -> str:
+def longest_palindrome_dp(s: str) -> str:
     dp = [[0] * len(s) for _ in range(len(s))]
     longest_palindrome = ''
 
