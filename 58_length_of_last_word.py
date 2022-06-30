@@ -5,7 +5,7 @@ def length_of_last_Word(s: str) -> int:
 
 # URL:https://leetcode.com/problems/length-of-last-word/
 
-# ===========Time Complexity(Worst Case Performence)=========== #
+# ===========Time Complexity(Worst Case Performance)=========== #
 #
 # The split() function in Python's source code that
 # runs different loops depending on the properties.
@@ -18,3 +18,17 @@ def length_of_last_Word(s: str) -> int:
 # Therefore, the Time complexity is O(n)
 #
 # O(n)
+
+
+def length_of_last_Word_without_split(s: str) -> int:
+    end = len(s) - 1
+
+    while (end > 0) and (s[end] == " "):
+        end -= 1
+
+    start = end
+
+    while (start >= 0) and (s[start] != " "):
+        start -= 1
+
+    return end - start
