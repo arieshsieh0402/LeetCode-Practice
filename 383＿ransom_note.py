@@ -1,3 +1,6 @@
+from collections import Counter
+
+
 def can_construct(ransom_note: str, magazine: str) -> bool:
     """
     Given two strings ransomNote and magazine, return true if
@@ -29,3 +32,10 @@ def can_construct(ransom_note: str, magazine: str) -> bool:
 # (ransom_note runs n times, magazine_lst.remove() runs m times.)
 
 # Time Complexity is O(n * m) (O(n + n * m) = O(n * m))
+
+
+def can_construct_collection_counter(ransom_note: str, magazine: str) -> bool:
+    ransom_note_count = Counter(ransom_note)
+    magazine_count = Counter(magazine)
+
+    return not bool(ransom_note_count - magazine_count)
