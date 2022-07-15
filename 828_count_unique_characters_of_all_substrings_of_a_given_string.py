@@ -1,5 +1,6 @@
 # Brute-Force
 from collections import Counter
+from string import ascii_uppercase
 
 
 def unique_letter_string_brute(s: str) -> int:
@@ -39,5 +40,22 @@ def unique_letter_string_expansion(s: str) -> int:
         right_length = right - index
 
         result += left_length * right_length
+
+    return result
+
+
+# One Pass
+def unique_letter_string_one_pass(s: str) -> int:
+    result = 0
+    expansion_dict = {char: (-1, -1) for char in ascii_uppercase}
+
+    for index, char in enumerate(s):
+        left, right = expansion_dict[char]
+        result += (index - right) * (right - left)
+        expansion_dict[char] = (right, index)
+
+    for char in expansion_dict:
+        left, right = expansion_dict[char]
+        result += (len(s) - right) * (right - left)
 
     return result
