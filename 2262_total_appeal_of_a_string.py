@@ -1,4 +1,5 @@
 from string import ascii_lowercase
+from collections import defaultdict
 
 
 # Brute-Force
@@ -34,5 +35,31 @@ def appeal_sum_brute_imp(s: str) -> int:
         for j in range(i, len(s)):
             sub_string = s[i:j + 1]
             result += check_char_appeal(sub_string)
+
+    return result
+
+
+# Expansion
+def appeal_sum_expansion(s: str) -> int:
+    result = 0
+    for index, char in enumerate(s):
+        left = index - 1
+        while left >= 0 and s[left] != char:
+            left -= 1
+
+        left_length = index - left
+        result += left_length * (len(s) - index)
+
+    return result
+
+
+# Expansion Improvement
+def appeal_sum_expansion_imp(s: str) -> int:
+    result = 0
+    last_position = defaultdict(lambda: -1)
+
+    for index, char in enumerate(s):
+        result += (index - last_position[char]) * (len(s) - index)
+        last_position[char] = index
 
     return result
