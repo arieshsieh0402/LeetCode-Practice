@@ -21,3 +21,6 @@ def backspace_compare(s: str, t: str) -> bool:
 
 # Time: O(n)
 # Space: O(n)
+
+def backspace_compare_improve(s: str, t: str) -> bool:
+    
