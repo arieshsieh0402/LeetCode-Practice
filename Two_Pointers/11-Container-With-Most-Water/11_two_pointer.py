@@ -1,7 +1,7 @@
 from typing import List
 
 
-def max_area_brute_force(height: List[int]) -> int:
+def max_area(height: List[int]) -> int:
     n = len(height)
     max_container = 0
 
