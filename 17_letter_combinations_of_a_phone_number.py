@@ -3,7 +3,6 @@ def letter_combinations(digits: str):
         return []
 
     digit_map = {
-        '1': '',
         '2': 'abc',
         '3': 'def',
         '4': 'ghi',
@@ -11,8 +10,7 @@ def letter_combinations(digits: str):
         '6': 'mno',
         '7': 'pqrs',
         '8': 'tuv',
-        '9': 'wxyz',
-        '0': ' '
+        '9': 'wxyz'
     }
 
     all_combinations = ['']
