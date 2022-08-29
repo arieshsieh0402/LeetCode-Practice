@@ -12,7 +12,7 @@ def bubble_sort(nums):
 def selection_sort(nums):
     for i in range(len(nums) - 1):
         min_index = i
-        for j in range(i, len(nums)):
+        for j in range(i + 1, len(nums)):
             if nums[j] < nums[min_index]:
                 min_index = j
         nums[min_index], nums[i] = nums[i], nums[min_index]
@@ -53,3 +53,4 @@ def merge_sort(nums):
         left_arr = nums[:middle]
         right_arr = nums[middle:len(nums)]
         return merge(merge_sort(left_arr), merge_sort(right_arr))
+
