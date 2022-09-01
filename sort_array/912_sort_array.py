@@ -55,6 +55,7 @@ def merge_sort(nums):
         return merge(merge_sort(left_arr), merge_sort(right_arr))
 
 
+# Quick sort
 def partition(nums, p, r):
     pivot = nums[r]
     i = p - 1
@@ -74,3 +75,40 @@ def quick_sort(nums, p, r):
         quick_sort(nums, q + 1, r)
 
 # quick_sort(nums, 0, len(nums) - 1)
+
+
+# Heap Sort
+nums = [5, 1, 1, 2, 0, 0]
+heap_size = len(nums) - 1
+
+
+def build_max_heap():
+    for i in range(heap_size // 2, -1, -1):
+        max_heapify(i)
+
+
+def max_heapify(i):
+    left = 2 * i + 1
+    right = 2 * i + 2
+
+    if left <= heap_size and nums[left] > nums[i]:
+        largest = left
+    else:
+        largest = i
+    if right <= heap_size and nums[right] > nums[largest]:
+        largest = right
+    if largest != i:
+        nums[i], nums[largest] = nums[largest], nums[i]
+        max_heapify(largest)
+
+
+def heap_sort():
+    global heap_size
+    build_max_heap()
+    for i in range(len(nums) - 1, -1, -1):
+        nums[0], nums[i] = nums[i], nums[0]
+        heap_size -= 1
+        max_heapify(0)
+
+
+heap_sort()
