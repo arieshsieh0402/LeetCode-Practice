@@ -4,16 +4,14 @@ from collections import deque
 def min_depth_dfs(root):
     if not root:
         return 0
-    if not root.left or not root.right:
-        return max(
-            min_depth_dfs(root.left),
-            min_depth_dfs(root.right)
-        ) + 1
-    else:
-        return min(
-            min_depth_dfs(root.left),
-            min_depth_dfs(root.right)
-        ) + 1
+    if not root.left and not root.right:
+        return 1
+    if root.left and not root.right:
+        return min_depth_dfs(root.left) + 1
+    if root.right and not root.left:
+        return min_depth_dfs(root.right) + 1
+
+    return min(min_depth_dfs(root.left), min_depth_dfs(root.right)) + 1
 
 
 def min_depth_bfs(root):
