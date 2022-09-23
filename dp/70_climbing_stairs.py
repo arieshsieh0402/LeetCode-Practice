@@ -1,6 +1,7 @@
 # Solution 1
 # Fibonacci Recursive
 
+
 def climb_stairs(n: int) -> int:
     # Base case
     if n <= 2:
