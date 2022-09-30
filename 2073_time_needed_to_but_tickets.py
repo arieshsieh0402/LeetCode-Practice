@@ -1,27 +1,24 @@
-def time_required_to_buy(tickets, k):
+def time_required_to_buy_brute(tickets, k):
     counter = 0
     target = tickets[k]
     while target > 0:
         for i in range(len(tickets)):
-            tickets[i] -= 1
-            if tickets[i] >= 0:
+            if tickets[i] != 0:
+                tickets[i] -= 1
                 counter += 1
-                if tickets[k] == 0:
-                    break
+            if tickets[k] == 0:
+                break
         target -= 1
     return counter
 
 
-# URL: https://leetcode.com/problems/time-needed-to-buy-tickets/
+def time_required_to_buy_one_pass(tickets, k):
+    n = len(tickets)
+    result = tickets[k]
 
-# 1. Set counter to the seconds counter
-# 2. Target is the number of tickets that the person needs to buy for ticket[k]
-# 3. Set a while loop, run through the entire array, only when ticket[i]
-# is greater than or equal to 0 after minus 1, will counter plus 1
-# 4. If ticket[k] is 0, break out of the loop
-# 5. After each while loop runs, the target minus 1
-
-# Complexities
-
-# Time: O(n^2)  >>>>>> I'm not sure.
-# Space: >>>>>> I haven't learned how to deal with it
+    for i in range(n):
+        if i < k:
+            result += min(tickets[i], tickets[k])
+        elif i > k:
+            result += min(tickets[i], tickets[k] - 1)
+    return result
