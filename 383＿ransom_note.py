@@ -1,13 +1,7 @@
 from collections import Counter
 
 
-def can_construct(ransom_note: str, magazine: str) -> bool:
-    """
-    Given two strings ransomNote and magazine, return true if
-    ransomNote can be constructed from magazine and false otherwise.
-
-    Each letter in magazine can only be used once in ransomNote.
-    """
+def can_construct_pointer(ransom_note: str, magazine: str) -> bool:
     # Set pointer of ransom note
     pointer = 0
 
@@ -23,19 +17,25 @@ def can_construct(ransom_note: str, magazine: str) -> bool:
 
     return True
 
-# URL:https://leetcode.com/problems/ransom-note/submissions/
-
-# ===========Time Complexity(Worst Case Performence)=========== #
-
-# 1.The time complexity of turn magazine into list is O(n)
-# 2.The time complexity of this while-loop is O(n * m).
-# (ransom_note runs n times, magazine_lst.remove() runs m times.)
-
-# Time Complexity is O(n * m) (O(n + n * m) = O(n * m))
-
 
 def can_construct_collection_counter(ransom_note: str, magazine: str) -> bool:
     ransom_note_count = Counter(ransom_note)
     magazine_count = Counter(magazine)
 
     return not bool(ransom_note_count - magazine_count)
+
+
+def can_construct(ransomNote: str, magazine: str) -> bool:
+    letter_counter = {}
+    for char in magazine:
+        if char not in letter_counter:
+            letter_counter[char] = 1
+        else:
+            letter_counter[char] += 1
+
+    for char in ransomNote:
+        if char in letter_counter and letter_counter[char] > 0:
+            letter_counter[char] -= 1
+        else:
+            return False
+    return True
