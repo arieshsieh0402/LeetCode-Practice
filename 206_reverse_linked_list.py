@@ -60,20 +60,19 @@ def reverse_list_iter(head: Optional[ListNode]) -> Optional[ListNode]:
     prev = None
     current = head
     while current is not None:
-        next = current.next
+        next_node = current.next
         current.next = prev
         prev = current
-        current = next
+        current = next_node
     return prev
 
 
 # Recursively
 def reverse_list_recur(self, head):
-    return self._reverse(head)
-
-    def reverse(self, node, prev=None):
+    def reverse(node, prev):
         if not node:
             return prev
         next_node = node.next
         node.next = prev
-        return self._reverse(next_node, node)
+        return reverse(next_node, node)
+    return reverse(head, None)
