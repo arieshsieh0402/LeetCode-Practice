@@ -17,3 +17,16 @@ def longest_consecutive(nums):
         longest_length = max(longest_length, next - prev - 1)
 
     return longest_length
+
+
+def longest_consecutive_set(nums):
+    nums = set(nums)
+    max_length = 0
+
+    for num in nums:
+        if num - 1 not in nums:
+            i = num
+            while i in nums:
+                max_length = max(max_length, i - num + 1)
+                i += 1
+    return max_length
