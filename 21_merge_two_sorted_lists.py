@@ -1,8 +1,10 @@
-def mergeTwoLists(
-    self,
-    list1: Optional[ListNode],
-    list2: Optional[ListNode]
-) -> Optional[ListNode]:
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
+def merge_two_lists_1(self, list1, list2):
     if not list1 and not list2:
         return None
     if not list1:
@@ -30,12 +32,9 @@ def mergeTwoLists(
     return new_head.next
 
 
-def mergeTwoLists(
-        list1: Optional[ListNode],
-        list2: Optional[ListNode]
-    ) -> Optional[ListNode]:
-     if not list1 and not list2:
-            return None
+def merge_two_lists_2(self, list1, list2):
+    if not list1 and not list2:
+        return None
     if not list1:
         return list2
     if not list2:
