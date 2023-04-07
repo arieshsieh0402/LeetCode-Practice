@@ -1,3 +1,4 @@
+# test
 def strong_password_checker_2(password: str) -> bool:
     n = len(password)
     if n < 8:
