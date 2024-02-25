@@ -3,7 +3,7 @@ import heapq
 from typing import List
 
 
-def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
+def network_delay_time(times: List[List[int]], n: int, k: int) -> int:
     # 用來存儲圖中資訊，key為起點，value為(終點, 耗時)的 list
     edgeMap = collections.defaultdict(list)
     for start, end, time in times:
