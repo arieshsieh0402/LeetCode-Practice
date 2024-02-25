@@ -15,7 +15,7 @@ https://leetcode.com/problems/network-delay-time/description/
     2. 在最壞情況下，每條邊都會被插入到 heap 中一次。 Heap 操作的時間複雜度是 $logV$，其中$V$ 是節的數量。因此，對於所有的邊，這部分的時間複雜度為 $O(ElogV)$。
     3. 最後時間複雜度取較高的 $O(ElogV)$。
 - Space Complexity: $O(E+V)$
-    1. **edges**：空間複雜度為 *O*(*E*)。
-    2. minHeap：在最壞的情況下包含所有的邊，因此空間複雜度為 $*O(E)*$。
-    3. visit： $*O(V)*$。
-    4. 總的空間複雜度為 $*O(E+V)*$。
+    1. **edges**：空間複雜度為 $O(E)$。
+    2. minHeap：在最壞的情況下包含所有的邊，因此空間複雜度為 $O(E)$。
+    3. visit： $O(V)$。
+    4. 總的空間複雜度為 $O(E+V)$。
