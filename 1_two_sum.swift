@@ -9,3 +9,9 @@ func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
   }
   return []
 }
+
+// Example usage:
+let nums = [2, 7, 11, 15]
+let target = 9
+let result = twoSum(nums, target)
+print(result)  // Output: [0, 1]
